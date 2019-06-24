@@ -1,0 +1,260 @@
+.page-header {
+  position: relative;
+  margin: 10px 0;
+  &__logo {
+    display: flex;
+    justify-content: center;
+    min-height: 100px;
+  }
+  &__logo-text {
+    margin: 0;
+    margin-left: 5px;
+    align-self: center;
+  }
+  &__logo-title {
+    font-size: 40px;
+    font-family: #{$font-bebas};
+    text-transform: uppercase;
+    color: #{$leonardo};
+  }
+  &__logo-info {
+    display: block;
+    @include set-font(10px, 12px);
+    font-family: #{$font-proxima-lt};
+    color: #{$brown};
+  }
+}
+
+
+
+.page-header img {
+  width: 100px;
+  height: 93px;
+}
+
+.main-nav {
+  &__switch {
+    @include button-default;
+    position: fixed;
+    right: 15px;
+    top: 0;
+    outline: none;
+    z-index: 25;
+
+    & path {
+      fill: #{$leonardo};
+    }
+    &:focus path, &:hover path {
+    fill: #{$pink};
+    }
+    &:active path {
+    fill: rgba(210, 40, 86, 0.3);
+    }
+  }
+  &__list {
+    @include reset-list;
+    position: fixed;
+    width: 100%;
+    top: -10px;
+    left: 0;
+    text-align: center;
+    display: none;
+    z-index: 20;
+  }
+  &__link {
+    display: block;
+    @include set-font(20px, 32px);
+    font-family: #{$font-proxima-lt};
+    color: #fff;
+    padding: 16px 20px;
+    margin: 0;
+    background-color: #283645;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 0 -1px 0 #000, inset 0 1px 0 rgba(255,255,255,.15);
+  }
+
+  .closed {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    &::before, &::after {
+      @include pseudo;
+      width: 3px;
+      height: 20px;
+      background-color: #{$pink};
+
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.main-nav__switch:hover .main-nav__list {
+  display: block;
+}
+
+.contacts-list {
+  @include reset-list;
+  position: relative;
+  text-align: center;
+  width: 236px;
+  margin: 0 auto;
+  &__link {
+    display: block;
+    // position: relative;
+    color: #{$black};
+    font-family: #{$font-proxima-bd};
+    font-size: 20px;
+    &--phone::before {
+      @include pseudo;
+      content: url('../img/phone-call.png');
+      left: 15px;
+      width: 17px;
+      height: 17px;
+    }
+  }
+  &__item {
+    color: #{$black};
+    &--address {
+      @include set-font(12px, 15px);
+      margin-bottom: 8px;
+      &::before {
+        content: url('../img/place-localizer.png');
+        width: 13px;
+        height: 19px;
+      }
+    }
+    &--time {
+      position: relative;
+      @include set-font(13px, 19px);
+      &::before {
+        @include pseudo;
+        content: url('../img/time copy.png');
+        width: 15px;
+        height: 15px;
+        left: 40px;
+      }
+    }
+  }
+}
+
+.user-nav-list {
+  @include reset-list;
+  display: none;
+}
+
+@media (min-width: #{$tablet-width}) {
+  .closed {
+    display: none;
+  }
+
+  .page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+    &__logo-text {
+      margin-left: 13px;
+      display: none;
+    }
+    &__logo-title {
+      font-size: 54px;
+    }
+    &__logo-info {
+      @include set-font(12px, 14px);
+      text-align: center;
+    }
+  }
+
+  .main-nav {
+    // margin-left: 40px;
+    &__switch {
+      display: none;
+
+    }
+    &__list {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      width: 300px;
+      text-align: left;
+    }
+    &__link {
+      @include set-font(15px, normal);
+      color: #{$leonardo};
+      padding: 0;
+      background-color: transparent;
+      text-decoration: underline;
+      text-transform: none;
+      box-shadow: none;
+    }
+  }
+
+  .contacts-list {
+    width: 195px;
+    text-align: left;
+    margin: 0;
+    &__link {
+      @include set-font(22px, 30px);
+      &--phone::before {
+        left: -25px;
+      }
+    }
+    &__item {
+      color: #{$black};
+      &--address {
+        position: relative;
+        @include set-font(13px, normal);
+        margin-bottom: 15px;
+        &::before {
+          @include pseudo;
+          content: url('../img/place-localizer.png');
+          left: -25px;
+        }
+      }
+      &--time {
+        @include set-font(14px, 30px);
+        &::before {
+          left: -25px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: #{$dekstop-width}) {
+  .main-nav {
+    margin-left: 50px;
+    margin-right: 90px;
+    &__list {
+      width: 400px;
+    }
+  }
+  .page-header {
+    justify-content: flex-start;
+    &__logo-text {
+      display: block;
+    }
+  }
+  .user-nav-list {
+    margin-left: 50px;
+    display: block;
+    align-self: flex-start;
+    margin-top: 25px;
+    &__link {
+      position: relative;
+      color: #000;
+      font-family: #{$font-proxima-lt};
+      &--search::before {
+        @include pseudo;
+        content: url('../img/magnifying-glass.png');
+        left: -35px;
+      }
+    }
+  }
+}

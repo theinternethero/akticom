@@ -1,0 +1,192 @@
+.best-equipment {
+  &__title {
+    display: none;
+    margin: 0;
+  }
+  &__list {
+    @include reset-list;
+  }
+  &__item {
+    position: relative;
+    width: 100%;
+    height: 80vw;
+    // min-height: 256px;
+    margin-bottom: 15px;
+    padding: 18px 13px;
+    box-sizing: border-box;
+    background-color: #dddddd;
+    // background: url('../img/best-equipment__item-image-01.jpg') top center no-repeat;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 80vw;
+      left: 0;
+      top: 0;
+      background-color: rgb(17, 59, 95);
+      opacity: 1;
+      transition: opacity .5s ease-out;
+      mix-blend-mode: multiply;
+      z-index: 1;
+    }
+    &-title {
+      @include set-font(16px, 18px);
+      position: relative;
+      font-family: #{$font-proxima-bd};
+      font-weight: 700;
+      color: #{$white};
+      margin: 0;
+      margin-bottom: 10px;
+      z-index: 2;
+    }
+    &-image {
+      margin: 0;
+      // display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      overflow: hidden;
+      img {
+        height: 80vw;
+        // width: 200%;
+      }
+    }
+    &-info {
+      position: relative;
+      @include set-font(12px, 14px);
+      color: #{$white};
+      margin: 0;
+      z-index: 2;
+    }
+    &-button {
+      position: absolute;
+      width: calc(100% - 28px);
+      left: 14px;
+      bottom: 22px;
+      z-index: 2;
+    }
+  }
+}
+
+@media (min-width: #{$tablet-width}) {
+  .best-equipment {
+    &__list {
+      // width: 1170px;
+      width: auto;
+      display: flex;
+      justify-content: space-between;
+      // justify-content: center;
+      flex-wrap: wrap;
+    }
+    &__item {
+      width: 270px;
+      height: 289px;
+      margin-bottom: 35px;
+      // margin-right: 30px;
+      padding: 0;
+      // &:nth-child(4n){
+      //   margin-right: 0;
+      // }
+
+      &::before {
+        display: none;
+      }
+      &-title {
+        position: absolute;
+        left: 23px;
+        top: 25px;
+        @include set-font(18px, normal);
+        // margin-bottom: 15px;
+        color: #{$leonardo};
+        z-index: 2;
+        transition: color 0.5s;
+      }
+      &:hover .best-equipment__item-title {
+        color: #f8f8f8;
+      }
+      &-image {
+        margin: 0;
+        // display: none;
+        position: relative;
+        width: 270px;
+        height: 289px;
+        overflow: hidden;
+        background-color: #dddddd;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 270px;
+          height: 289px;
+          left: 0;
+          top: 0;
+          background-color: rgb(17, 59, 95);
+          opacity: 0;
+          transition: opacity .5s ease-out;
+          mix-blend-mode: multiply;
+          z-index: 1;
+        }
+        img {
+          width: 270px;
+          height: 289px;
+          transition: all 0.5s ease-out;
+        }
+      }
+      &:hover .best-equipment__item-image img {
+        transform: scale(1.1);
+      }
+
+      &:hover .best-equipment__item-image::before {
+        opacity: 1;
+      }
+
+      &-details {
+        position: absolute;
+        left: 23px;
+        top: 90px;
+        opacity: 0;
+        transition: opacity 0.5s;
+        z-index: 2;
+      }
+
+      &:hover .best-equipment__item-details {
+        opacity: 1;
+      }
+
+      &:hover .best-equipment__item-image::before {
+        opacity: 1;
+      }
+
+      &-info {
+        position: relative;
+        @include set-font(12px, 14px);
+        color: #{$white};
+        margin: 0;
+        z-index: 2;
+        margin-bottom: 70px;
+      }
+      &-button {
+        position: relative;
+        width: auto;
+        z-index: 2;
+        margin-left: -23px;
+      }
+    }
+  }
+}
+@media (min-width: #{$dekstop-width}) {
+  .best-equipment {
+    &__title {
+      display: block;
+      text-align: center;
+      font-family: #{$font-proxima-bd};
+      @include set-font(40px, 60px);
+      margin-bottom: 25px;
+      margin-top: 30px;
+
+    }
+    &__list {
+      // width: 1170px;
+      // margin: 0 auto;
+    }
+  }
+}

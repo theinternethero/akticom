@@ -1,0 +1,68 @@
+.button {
+  @include button-default;
+  // width: 100%;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 10px;
+  background-color: #{$green};
+  &:hover, &:focus {
+    color: #fff;
+    background-color: #{$sky};
+  }
+  &:active {
+    color: #{$purple};
+  }
+  &:disabled {
+    background-color: #e5e5e5;
+  }
+  &--learn-more {
+    @include set-font(16px, 46px);
+    padding: 3px 24px 0px 20px;
+  }
+  &--more {
+    font-size: 16px;
+    // text-transform: none;
+    display: block;
+    width: 168px;
+    height: 36px;
+    border-radius: 36px;
+    line-height: 36px;
+  }
+  &--all {
+    display: block;
+    width: 100%;
+    height: 58px;
+    @include set-font(19px, 60px);
+    color: #fff;
+    margin: 0 auto;
+    margin-top: 63px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
+
+// @media (min-width: #{$dekstop-width}) {
+//   .button--download {
+//     font-size: 21px;
+//   }
+// }
+
+@media (min-width: #{$dekstop-width}) {
+  .button {
+    &--learn-more {
+      @include set-font(20px, 60px);
+      padding: 3px 24px 0px 20px;
+
+    }
+    &--more {
+      // @include set-font(18px, 60px);
+    }
+    &--all {
+      @include set-font(20px, 60px);
+      width: auto;
+      padding: 0px 45px 0px 50px;
+    }
+  }
+}

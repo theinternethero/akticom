@@ -1,0 +1,42 @@
+.fix-menu {
+  display: none;
+}
+
+
+@media (min-width: #{$dekstop-width}) {
+  .fix-menu {
+    display: block;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 132px;
+    height: 100%;
+    box-shadow: -15px 0 15px rgba(0, 0, 0, .15);
+    background-color: #{$leonardo};
+    z-index: 999;
+    &__list {
+      @include reset-list;
+    }
+    &__item {
+      // vertical-align: center;
+    }
+    &__link {
+      display: block;
+      color: #fff;
+      // text-align: center;
+      // vertical-align: center;
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 132px;
+      height: 114px;
+      font-size: 14px;
+      &:hover {
+        background-color: #{$sky};
+      }
+    }
+  }
+
+}

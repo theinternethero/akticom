@@ -1,0 +1,121 @@
+.video {
+  // width: 100%;
+  &__title {
+    margin: 15px 0;
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: #{$font-proxima-bd};
+    color: #{$leonardo};
+  }
+  &__list {
+    @include reset-list;
+  }
+  &__item {
+    position: relative;
+    &-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      text-transform: uppercase;
+      margin: 0;
+      padding: 5px 0;
+      @include set-font(14px, 19px);
+      font-family: #{$font-proxima-bd};
+      color: #{$white};
+      background-color: rgb(17, 59, 95);
+      mix-blend-mode: multiply;
+      z-index: 20;
+      &::before {
+        @include pseudo;
+      }
+    }
+
+    &-image {
+      margin: 0;
+    }
+    &::before {
+      @include pseudo;
+      // background-color: rgb(17, 59, 95);
+      // opacity: 1;
+      // transition: opacity .5s ease-out;
+      // mix-blend-mode: multiply;
+      // z-index: -1;
+      // width: 100%;
+      // height: 100%;
+    }
+  }
+  .slick-prev {
+    left: 0;
+    width: 34px;
+    height: 64px;
+    background: url('../img/back.png') top center no-repeat;
+    cursor: pointer;
+    z-index: 20;
+    &::before {
+      display: none;
+    }
+  }
+
+  .slick-next {
+    right: 0;
+    width: 34px;
+    height: 64px;
+    background: url('../img/next.png') top center no-repeat;
+    cursor: pointer;
+    &::before {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: #{$dekstop-width}) {
+
+  .video {
+    &__title {
+      @include set-font(40px, 60px);
+    }
+    &__item {
+      margin-right: 32px;
+      &-title {
+        @include set-font(16px, normal);
+      }
+      &-image::before {
+        @include pseudo;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(17, 59, 95);
+        opacity: 0;
+        transition: opacity .5s ease-out;
+        mix-blend-mode: multiply;
+        z-index: 1;
+      }
+
+      &-image::after {
+        @include pseudo;
+        content: url('../img/play-button.png');
+        width: 39px;
+        height: 55px;
+        opacity: 0;
+        left: 50%;
+        top: 50%;
+        margin-left: -20px;
+        margin-top: -23px;
+        transition: opacity .5s ease-out;
+        z-index: 1;
+      }
+
+      &:hover .video__item-image::before, &:hover .video__item-image::after {
+        opacity: 1;
+      }
+      &:hover .video__item-title {
+        z-index: 20;
+      }
+
+    }
+  }
+}
+
+

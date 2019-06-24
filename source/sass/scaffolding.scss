@@ -1,0 +1,19 @@
+body {
+  min-width: 320px;
+  font-family: #{$font-proxima-rg};
+  font-size: 16px;
+  font-weight: 400;
+  color: #{$leonardo};
+  margin: 0;
+  padding: 0;
+  background-color: #{$white};
+}
+
+// img {
+//   width: 100%;
+//   height: auto;
+// }
+
+a {
+  text-decoration: none;
+}

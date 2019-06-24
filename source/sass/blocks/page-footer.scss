@@ -1,0 +1,230 @@
+.page-footer {
+  background-color: #{$footer};
+  margin-top: 100px;
+  &__logo {
+
+    display: block;
+    text-align: center;
+    img {
+      width: 45px;
+      height: 42px;
+    }
+    &-text {
+      margin: 0;
+      text-align: center;
+    }
+    &-title {
+      font-size: 36px;
+      font-family: #{$font-bebas};
+      color: #{$white};
+
+    }
+    &-info {
+      display: block;
+      font-size: 8px;
+      font-family: #{$font-proxima-lt};
+      color: #fff;
+    }
+  }
+
+  &__row-top {
+    display: none;
+  }
+  &__row-bottom {
+    padding: 23px 0;
+  }
+  &__copyright {
+    display: none;
+    @include set-font(12px, 16px);
+    color: #fff;
+    font-family: #{$font-exo};
+    font-weight: 300;
+    font-family: 'Exo 2', sans-serif;
+  }
+
+  &__social-title {
+    line-height: 60px;
+    font-family: #{$font-proxima-bd};
+    color: #{$sky};
+    display: none;
+  }
+  &__social-list {
+    @include reset-list;
+    width: 130px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+
+
+  &__contacts-list {
+    @include reset-list;
+  }
+
+  &__contacts-item {
+    width: 270px;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    @include set-font(22px, 16px);
+    &:first-child {
+      margin-bottom: 7px;
+    }
+    &--phone::before {
+      @include pseudo;
+      content: url('../img/footer-phone.png');
+      top: -3px;
+      left: 4px;
+    }
+    &--mail::after {
+      @include pseudo;
+      content: url('../img/mail.png');
+    }
+  }
+}
+
+.payment__list {
+
+  width: 80px;
+  @include reset-list;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+@media (min-width: #{$dekstop-width}) {
+  .page-footer {
+    position: relative;
+    margin-top: 105px;
+    &::before {
+      @include pseudo;
+      height: 1px;
+      width: 100%;
+      background-color: #fff;
+      top: 48px;
+    }
+    &__logo {
+      display: flex;
+    }
+    &__copyright {
+      display: block;
+      margin-bottom: 0;
+    }
+
+    &__column-wrapper {
+      display: flex;
+    }
+
+
+
+    &__row-bottom {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      padding-top: 20px;
+      padding-bottom: 15px;
+
+      &::before {
+        @include pseudo;
+        width: 100%;
+        height: 1px;
+        background-color: #{$leonardo};
+        left: -50px;
+        top: 25px;
+
+      }
+    }
+
+    &__row-top {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__social-title {
+      display: block;
+    }
+
+    &__nav-list {
+      @include reset-list;
+      &:last-child {
+        margin-right: 50px;
+      }
+    }
+
+    &__nav-title {
+      position: relative;
+      font-family: #{$font-proxima-bd};
+      text-transform: uppercase;
+      line-height: 60px;
+      color: #3abfef;
+      &::after {
+        @include pseudo;
+        width: 54px;
+        height: 4px;
+        background-color: #fff;
+        top: 25px;
+      }
+
+    }
+    &__nav-link {
+      position: relative;
+      font-family: #{$font-proxima-lt};
+      @include set-font(14px, 24px);
+      color: #fff;
+      padding-left: 12px;
+      &::before {
+        @include pseudo;
+        content: url('../img/keyboard-right-arrow-button.png');
+        width: 5px;
+        height: 8px;
+        top: -3px;
+      }
+    }
+
+    &__social__list {
+      margin: 0;
+    }
+
+    &__column {
+      margin-top: 20px;
+    }
+
+    &__contacts-list {
+      margin-top: 20px;
+    }
+
+    &__contacts-item:first-child {
+      margin-bottom: 25px;
+    }
+
+    &__logo-text {
+      margin-left: 7px;
+    }
+
+    &__logo img {
+      display: block;
+      margin-top: 7px;
+    }
+  }
+
+
+
+  .payment__list {
+    width: auto;
+    display: block;
+    margin: 0;
+    margin-top: 3px;
+    margin-left: 5px;
+    // margin-top: 20px;
+  }
+
+
+}

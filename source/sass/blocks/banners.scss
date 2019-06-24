@@ -1,0 +1,84 @@
+.banners {
+  width: 100%;
+  &__list {
+    @include reset-list;
+    .slick-prev, .slick-next {
+      display: none!important;
+    }
+  }
+  &__item {
+    background-color: #{$leonardo};
+    min-height: 450px;
+    padding: 0 10px;
+    padding-top: 40px;
+    &-intro {
+      @include set-font(20px, 1.4);
+      color: #fff;
+      margin-bottom: 18px;
+      display: block;
+    }
+    &-title {
+      margin: 0;
+      font-family: #{$font-proxima-bd};
+      color: #{$sky};
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    &-info {
+      margin: 0;
+      margin-bottom: 25px;
+      @include set-font(14px, 18px);
+      color: #fff;
+    }
+
+  }
+}
+
+.my-dots {
+  @include reset-list;
+  position: absolute;
+  bottom: 50px;
+  left: 15px;
+  display: flex!important;
+  width: 127px;
+  height: 3px;
+  justify-content: space-between;
+  button {
+    @include button-default;
+    height: 3px;
+    width: 35px;
+    font-size: 0;
+    background-color: #fff;
+    outline: none;
+  }
+  .slick-active button {
+    background-color: #{$sky};
+  }
+}
+
+@media (min-width: #{$tablet-width}) {
+  .banners {
+    margin-top: 30px;
+    &__item {
+      background-color: #{$leonardo};
+      background: url('../img/bg.jpg') top center no-repeat;
+      min-height: 463px;
+      // padding: 0;
+      // padding: 0 10px;
+      padding-top: 100px;
+      &-intro {
+        @include set-font(24px, 60px);
+        margin-bottom: 25px;
+      }
+      &-title {
+        @include set-font(90px, 60px);
+        margin-bottom: 20px;
+      }
+      &-info {
+        @include set-font(16px, normal);
+        margin-bottom: 60px;
+      }
+
+    }
+  }
+}

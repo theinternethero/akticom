@@ -1,0 +1,101 @@
+.stock {
+  margin-bottom: 50px;
+  // width: 100%;
+  &__title {
+    margin: 15px 0;
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: #{$font-proxima-bd};
+    color: #{$leonardo};
+  }
+  &__list {
+    @include reset-list;
+    margin-bottom: 30px;
+  }
+  &__item {
+    &-title {
+      margin: 0;
+      @include set-font(14px, 19px);
+      font-family: #{$font-proxima-bd};
+      color: #{$gray};
+      padding-left: 3px;
+      margin-bottom: 15px;
+    }
+    &-image {
+      margin: 0;
+    }
+    &-info {
+      font-size: 14px;
+      color: #{$gray};
+    }
+    &-button {
+      margin-top: 15px;
+      margin-left: 5px;
+    }
+  }
+  &__button {
+    margin-top: 63px;
+    margin-bottom: 10px;
+  }
+  .slick-prev {
+    left: 0;
+    width: 34px;
+    height: 64px;
+    background: url('../img/back.png') top center no-repeat;
+    cursor: pointer!important;
+    z-index: 20;
+    top: 40%;
+    &::before {
+      display: none;
+    }
+  }
+
+  .slick-next {
+    right: 0;
+    width: 34px;
+    height: 64px;
+    top: 40%;
+    background: url('../img/next.png') top center no-repeat;
+    cursor: pointer!important;
+    &::before {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: #{$tablet-width}) {
+  .stock {
+    margin-bottom: 100px;
+    // width: 100%;
+    &__title {
+      @include set-font(40px, 60px);
+      margin-bottom: 50px;
+    }
+    &__list {
+      @include reset-list;
+      margin-bottom: 30px;
+    }
+    &__item {
+      width: 371px;
+      margin-right: 32px;
+      &-title {
+        @include set-font(16px, normal);
+        margin-bottom: 15px;
+
+      }
+      &-image {
+      }
+      &-info {
+      }
+      &-button {
+        margin-top: 15px;
+        margin-left: 5px;
+      }
+    }
+    &__button {
+      margin-top: 63px;
+      margin-bottom: 10px;
+    }
+  }
+}
