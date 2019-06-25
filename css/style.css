@@ -52,7 +52,9 @@ a {
 @media (min-width: 1200px) {
   .container {
     width: auto;
-    padding: 0 20px; } }
+    padding: 0 20px; }
+    .best-equipment.container {
+      max-width: 1349px; } }
 
 .visually-hidden:not(:focus):not(:active), input[type="checkbox"].visually-hidden, input[type="radio"].visually-hidden {
   position: absolute;
